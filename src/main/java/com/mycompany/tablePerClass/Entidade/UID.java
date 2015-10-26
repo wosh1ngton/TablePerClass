@@ -19,7 +19,6 @@ import javax.persistence.Table;
  * Single-Table Strategy
  */
 @Entity
-@Table(name="UID")
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class UID {
 

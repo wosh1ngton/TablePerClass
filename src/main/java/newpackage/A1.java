@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.tablePerClass.Entidade;
+package newpackage;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -14,21 +13,18 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-public class GenericID extends ObjectID {
-
-
+@Table(name="A1")
+public abstract class A1 extends A{
     
+    
+    String apelido;
 
-    public GenericID(String scheme) {
-        this.scheme = scheme;
+    public String getApelido() {
+        return apelido;
     }
-    @Column   
-    private final String scheme;
 
-    public String getScheme() {
-        return scheme;
+    public void setApelido(String apelido) {
+        this.apelido = apelido;
     }
-    
-    
     
 }

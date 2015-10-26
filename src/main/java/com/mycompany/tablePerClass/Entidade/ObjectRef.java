@@ -5,6 +5,7 @@
  */
 package com.mycompany.tablePerClass.Entidade;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -21,10 +22,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="Object_Ref")
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="ObjectRef_TYPE",
-        discriminatorType=DiscriminatorType.STRING, length=1)
-public class ObjectRef {
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public class ObjectRef implements Serializable {
     
     @Id
     @OneToOne

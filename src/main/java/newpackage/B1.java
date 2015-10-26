@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.tablePerClass.Entidade;
+package newpackage;
 
-import java.io.Serializable;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.DiscriminatorValue;
@@ -19,6 +18,21 @@ import javax.persistence.Table;
  * @author Woshington
  */
 @Entity
-public abstract class UIDBasedID extends ObjectID implements Serializable {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="B1_TYPE",
+        discriminatorType = DiscriminatorType.STRING, length = 2)
+@DiscriminatorValue(value="B1")
+public abstract class B1 extends B {
+    String surname;
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+    
+    
     
 }

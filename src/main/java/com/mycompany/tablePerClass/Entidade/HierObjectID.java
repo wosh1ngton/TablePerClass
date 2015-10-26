@@ -5,22 +5,45 @@
  */
 package com.mycompany.tablePerClass.Entidade;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@DiscriminatorValue(value="HO")
-public class HierObjectID extends UIDBasedID {
-    
+public class HierObjectID extends UIDBasedID implements Serializable {
    
+    
+    @OneToOne
     private UID root;   // mandatory
     @Column
     private String extension;
+
+    public HierObjectID() {
+    }
+
+    public UID getRoot() {
+        return root;
+    }
+
+    public void setRoot(UID root) {
+        this.root = root;
+    }
+
+    public String getExtension() {
+        return extension;
+    }
+
+    public void setExtension(String extension) {
+        this.extension = extension;
+    }
+    
+    
     
 }

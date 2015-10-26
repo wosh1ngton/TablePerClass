@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.tablePerClass.Entidade;
-
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+package newpackage;
 
 /**
  *
  * @author Woshington
  */
-@Entity
-public class InternetID extends UID implements Serializable {
+public class D1 {
     
 }

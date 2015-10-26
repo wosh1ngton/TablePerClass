@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.tablePerClass.Entidade;
+package newpackage;
 
 import java.io.Serializable;
 import javax.persistence.DiscriminatorColumn;
@@ -12,18 +12,26 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-
+import javax.persistence.Table;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-
-public abstract class ObjectID implements Serializable {
+@Table(name="C")
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorColumn(name="C_TYPE",
+        discriminatorType=DiscriminatorType.STRING, length=2)
+public abstract class C implements Serializable {
     @Id
-    private String value;
+    String value; 
+    
+    public C() {
+    }
+    public C(String value) {
+        this.value = value;
+    }
 
     public String getValue() {
         return value;
@@ -32,5 +40,6 @@ public abstract class ObjectID implements Serializable {
     public void setValue(String value) {
         this.value = value;
     }
+    
     
 }

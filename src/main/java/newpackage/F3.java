@@ -3,17 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.tablePerClass.Entidade;
+package newpackage;
 
-import java.io.Serializable;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-public class InternetID extends UID implements Serializable {
+@DiscriminatorValue(value="F3")
+@PrimaryKeyJoinColumn(name="F_ID")
+public class F3 extends F{
+
+    
     
 }

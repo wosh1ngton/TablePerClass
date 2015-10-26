@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="identification" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class> com.mycompany.tablePerClass.Entidade.AccessGroupRef</class>
+      <class> com.mycompany.tablePerClass.Entidade.ArchetypeID </class>
+      <class> com.mycompany.tablePerClass.Entidade.GenericID</class>
+      <class> com.mycompany.tablePerClass.Entidade.HierObjectID</class>
+      <class> com.mycompany.tablePerClass.Entidade.ISO_OID</class>
+      <class> com.mycompany.tablePerClass.Entidade.InternetID</class>
+      <class> com.mycompany.tablePerClass.Entidade.LocatableRef</class>
+      <class> com.mycompany.tablePerClass.Entidade.ObjectID</class>
+      <class> com.mycompany.tablePerClass.Entidade.ObjectRef</class>
+      <class> com.mycompany.tablePerClass.Entidade.ObjectVersionID</class>
+      <class> com.mycompany.tablePerClass.Entidade.PartyRef</class>
+      <class> com.mycompany.tablePerClass.Entidade.TemplateID</class>
+      <class> com.mycompany.tablePerClass.Entidade.TerminologyID</class>
+      <class> com.mycompany.tablePerClass.Entidade.UID</class>
+      <class> com.mycompany.tablePerClass.Entidade.UIDBasedID</class>
+      <class> com.mycompany.tablePerClass.Entidade.UUID</class>
+      <class> com.mycompany.tablePerClass.Entidade.VersionTreeID</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/identification_v1"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="h4ll"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="hibernate.archive.autodetection" value="false" /> 
+      
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="Teste" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>newpackage.A</class>
+   <class>newpackage.A1</class>
+   <class>newpackage.A11</class>
+   <class>newpackage.A12</class>
+   <class>newpackage.A2</class>
+   <class>newpackage.D</class>
+   <class>newpackage.D1</class>
+   <class>newpackage.D2</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/testes"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="h4ll"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="hibernate.archive.autodetection" value="false" /> 
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="TesteB" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>newpackage.B</class>
+   <class>newpackage.B1</class>
+   <class>newpackage.B2</class>
+   <class>newpackage.B11</class>
+   <class>newpackage.B12</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/testesB"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="h4ll"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="hibernate.archive.autodetection" value="false" /> 
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="TesteC" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>newpackage.C</class>
+   <class>newpackage.C1</class>
+   <class>newpackage.C11</class>
+   <class>newpackage.C12</class>
+   <class>newpackage.C2</class>
+   <class> newpackage.F</class>
+    <class> newpackage.F1</class>
+     <class> newpackage.F2</class>
+      <class> newpackage.F3</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/testesC"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="h4ll"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="hibernate.archive.autodetection" value="false" /> 
+    </properties>
+  </persistence-unit>
+  
+</persistence>
