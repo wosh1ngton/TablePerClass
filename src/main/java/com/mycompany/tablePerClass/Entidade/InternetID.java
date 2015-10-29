@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.tablePerClass.Entidade;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  *
@@ -16,4 +10,15 @@ import javax.persistence.Table;
 @Entity
 public class InternetID extends UID implements Serializable {
     
+    //@Id
+    //@GeneratedValue(strategy=GenerationType.AUTO)
+    //private Long id;
+    
+    public InternetID() {
+    }
+    
+    //@FullConstructor
+    public InternetID(String value) {
+        super.setValue(value);        
+    }     
 }

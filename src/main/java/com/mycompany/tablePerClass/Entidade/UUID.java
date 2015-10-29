@@ -1,25 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.tablePerClass.Entidade;
 
-import javax.persistence.DiscriminatorValue;
+import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@Table(name="UUID")
-public class UUID extends UID {
-
+public class UUID extends UID implements Serializable {
+    
+    //@Id
+    //@GeneratedValue(strategy=GenerationType.AUTO)
+    //private Long id;
+    
     public UUID() {
     }
-    
-    
-    
+    //@FullConstructor
+    public UUID(String value) {
+        super.setValue(value);        
+    }    
+       
 }

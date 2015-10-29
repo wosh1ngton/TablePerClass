@@ -1,47 +1,63 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.tablePerClass.Entidade;
 
 import java.io.Serializable;
 import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@Table(name="Object_Ref")
+@TableGenerator (name="EHR_TABLE_GENERATOR",
+table="SEQUENCE_GENERATOR_TABLE",
+pkColumnName="SEQUENCE_NAME",
+valueColumnName="SEQUENCE_VALUE",
+pkColumnValue="EHR_SEQUENCE")
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class ObjectRef implements Serializable {
     
-    @Id
+    @Id 
+    @GeneratedValue(strategy=GenerationType.TABLE,
+            generator = "EHR_TABLE_GENERATOR")
+    private Long id;
+    
     @OneToOne
-    private ObjectID id;
+    private ObjectID objectId;
     @Column
     private String namespace;
     @Column
     private String type;
-    
-    ObjectRef(){};
 
-    public ObjectID getId() {
+    public ObjectRef() {
+    }
+    
+    
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(ObjectID id) {
+    public void setId(Long id) {
         this.id = id;
     }
+
+    public ObjectID getObjectId() {
+        return objectId;
+    }
+
+    public void setObjectId(ObjectID objectId) {
+        this.objectId = objectId;
+    }
+
+   
 
     public String getNamespace() {
         return namespace;

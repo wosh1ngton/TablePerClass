@@ -5,9 +5,12 @@
  */
 package com.mycompany.tablePerClass.teste;
 
+import com.mycompany.tablePerClass.Entidade.AccessGroupRef;
+import com.mycompany.tablePerClass.Entidade.ISO_OID;
 import com.mycompany.tablePerClass.Entidade.InternetID;
 import com.mycompany.tablePerClass.Entidade.LocatableRef;
 import com.mycompany.tablePerClass.Entidade.ObjectVersionID;
+import com.mycompany.tablePerClass.Entidade.UUID;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -23,11 +26,16 @@ public class GeraTabela {
     public static void main(String[] args) {
     
     InternetID internet=new InternetID();
-    internet.setValue("www.uol.com.br2");
-     ObjectVersionID oid=new ObjectVersionID();
-        oid.setValue("123");
+    internet.setValue("www.globo.com");
+    ISO_OID iso=new ISO_OID("2.16.840.1.113883.3.1");
+    UUID u=new UUID("8-4-4-4-12");
+     //ObjectVersionID oid=new ObjectVersionID();
+     //   oid.setValue("123");
         LocatableRef lr=new LocatableRef();
-        lr.setId(oid);
+        AccessGroupRef ac=new AccessGroupRef();
+        ac.setNamespace("nome");
+        ac.setType("tipo1");
+        //lr.setId(oid);
         lr.setNamespace("fwfwef");
         lr.setPath("pathdo sucesso");
         lr.setType("teste");
@@ -35,10 +43,10 @@ public class GeraTabela {
     EntityManager manager=factory.createEntityManager();
     
     manager.getTransaction().begin();
-    manager.persist(lr);
+    manager.persist(internet);
     manager.getTransaction().commit();
        
-        System.out.println("UID persistido " + oid.getValue());
+        System.out.println("UID persistido " + iso.getValue());
     
     manager.close();
     }

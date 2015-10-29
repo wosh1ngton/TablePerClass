@@ -1,24 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.tablePerClass.Entidade;
 
 import java.io.Serializable;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 /**
  *
  * @author Woshington
  */
-@Entity
+@Entity /*
+@TableGenerator (name="EHR_TABLE_GENERATOR",
+table="SEQUENCE_GENERATOR_TABLE",
+pkColumnName="SEQUENCE_NAME",
+valueColumnName="SEQUENCE_VALUE",
+pkColumnValue="EHR_SEQUENCE")*/
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class UIDBasedID extends ObjectID implements Serializable {
-    
+
+    public abstract UID root();
+    /*
+    @Id 
+    @GeneratedValue(strategy=GenerationType.TABLE,
+            generator = "EHR_TABLE_GENERATOR")
+    private Long id; */
+     
 }

@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.tablePerClass.Entidade;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
+
 
 /**
  *
@@ -17,12 +11,11 @@ import javax.persistence.Table;
 public class GenericID extends ObjectID {
 
 
-    
-
-    public GenericID(String scheme) {
+    public GenericID(String scheme, String value) {
+        super(value);
         this.scheme = scheme;
     }
-    @Column   
+  
     private final String scheme;
 
     public String getScheme() {

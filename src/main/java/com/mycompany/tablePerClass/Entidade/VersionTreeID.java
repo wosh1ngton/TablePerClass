@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.tablePerClass.Entidade;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -17,13 +13,19 @@ import javax.persistence.Id;
 public class VersionTreeID {
     
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
     private String value;
-    @Column
     private String trunkVersion;
-    @Column
     private String branchNumber;
-    @Column
     private String branchVersion;
+
+    public VersionTreeID(String value, String trunkVersion, String branchNumber, String branchVersion) {
+        this.value = value;
+        this.trunkVersion = trunkVersion;
+        this.branchNumber = branchNumber;
+        this.branchVersion = branchVersion;
+    }
 
     public String getValue() {
         return value;
