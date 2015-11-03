@@ -20,15 +20,19 @@ table="SEQUENCE_GENERATOR_TABLE",
 pkColumnName="SEQUENCE_NAME",
 valueColumnName="SEQUENCE_VALUE",
 pkColumnValue="EHR_SEQUENCE")
+
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class UID implements Serializable {
     
     @Id
-    @GeneratedValue(strategy=GenerationType.TABLE,
-            generator = "EHR_TABLE_GENERATOR")
+    @GeneratedValue(strategy=GenerationType.TABLE, generator = "EHR_TABLE_GENERATOR")
     private Long ID;
 
     public UID() {
+    }
+
+    public UID(String value) {
+        this.value = value;
     }
     
     private String value;

@@ -7,17 +7,30 @@ package newpackage;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@DiscriminatorValue(value="F2")
-@PrimaryKeyJoinColumn(name="F_ID")
-public class F2 extends F {
+@DiscriminatorValue(value = "B5")
+public class B5 extends B {
 
+    public B5(String scheme, String value) {
+        super(value);
+        this.scheme = scheme;
+    }
 
+    public B5() {
+    }
+    
+    
+    
+    private String scheme;
+
+    @Override
+    public String toString() {
+        return "B5{" + "scheme=" + scheme + '}';
+    }
     
 }

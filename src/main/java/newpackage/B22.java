@@ -5,6 +5,7 @@
  */
 package newpackage;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
@@ -12,15 +13,19 @@ import javax.persistence.Entity;
  * @author Woshington
  */
 @Entity
-public class A11 extends A1{
-    String endereco;
+@DiscriminatorValue(value = "B22")
+public class B22 extends B2{
 
-    public String getEndereco() {
-        return endereco;
+    public B22() {
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public B22(String value) {
+        super(value);
+    }
+
+    @Override
+    public String toString() {
+        return "B22{" + '}';
     }
     
 }

@@ -7,24 +7,25 @@ package newpackage;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@DiscriminatorValue(value="11")
-public class B11 extends B1{
-    String endereco;
+@DiscriminatorValue(value = "B3")
+public class B3 extends B {
 
-    public String getEndereco() {
-        return endereco;
+    public B3(String value) {
+        super(value);
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public B3() {
     }
-    
+
+    @Override
+    public String toString() {
+        return "B3{" + '}';
+    }
     
 }

@@ -13,5 +13,8 @@ public class TemplateID extends ObjectID {
     public TemplateID(String value) {
 	super(value);
     }
+
+    public TemplateID() {
+    }
     
 }

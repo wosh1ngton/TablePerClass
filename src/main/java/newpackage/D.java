@@ -5,33 +5,37 @@
  */
 package newpackage;
 
-import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
-public class D implements Serializable {
-    @JoinColumn(name="id_A")
-    @OneToOne
+public class D {
     @Id
-    A id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long ID;    
+    private String value;
 
-    public A getId() {
-        return id;
+    public Long getID() {
+        return ID;
     }
 
-    public void setId(A id) {
-        this.id = id;
+    public void setID(Long ID) {
+        this.ID = ID;
     }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+    
+    
 }

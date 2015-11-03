@@ -15,13 +15,15 @@ public class GenericID extends ObjectID {
         super(value);
         this.scheme = scheme;
     }
+
+    public GenericID() {
+    }
   
-    private final String scheme;
+    private String scheme;
 
     public String getScheme() {
         return scheme;
     }
-    
-    
+   
     
 }

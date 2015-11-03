@@ -32,8 +32,7 @@ public abstract class ObjectID implements Serializable {
     }
     
     @Id 
-    @GeneratedValue(strategy=GenerationType.TABLE,
-            generator = "EHR_TABLE_GENERATOR")
+    @GeneratedValue(strategy=GenerationType.TABLE, generator = "EHR_TABLE_GENERATOR")
     private Long id;
     
     private String value;

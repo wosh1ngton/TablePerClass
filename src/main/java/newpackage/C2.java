@@ -7,35 +7,23 @@ package newpackage;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@Table(name="C2")
-@DiscriminatorValue(value="C2")
-@PrimaryKeyJoinColumn(name="C_ID")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorValue(value = "C2")
 public class C2 extends C{
-    String frutas;
 
-    public C2(String value) {
-        super(value);
+    public C2(B b) {
+        super(b);
     }
 
-    C2() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public C2() {
     }
-
-    public String getFrutas() {
-        return frutas;
-    }
-
-    public void setFrutas(String frutas) {
-        this.frutas = frutas;
-    }
-    
     
 }

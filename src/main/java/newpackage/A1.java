@@ -5,26 +5,23 @@
  */
 package newpackage;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@Table(name="A1")
-public abstract class A1 extends A{
+@DiscriminatorValue(value = "A1")
+public class A1 extends A {
     
-    
-    String apelido;
-
-    public String getApelido() {
-        return apelido;
+   public A1() {
     }
 
-    public void setApelido(String apelido) {
-        this.apelido = apelido;
+    public A1(String value) {
+        super(value);
     }
+    
     
 }

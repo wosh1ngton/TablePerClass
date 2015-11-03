@@ -5,20 +5,27 @@
  */
 package newpackage;
 
-import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
  * @author Woshington
- */ 
+ */
 @Entity
-@DiscriminatorValue(value="C1")
-@PrimaryKeyJoinColumn(name="F_ID")
-public class F1 extends F{
+@DiscriminatorValue(value = "B21")
+public class B21 extends B2 {
 
-   
+    public B21(String value) {
+        super(value);
+    }
+
+    public B21() {
+    }
+
+    @Override
+    public String toString() {
+        return "B21{" + '}';
+    }
     
 }

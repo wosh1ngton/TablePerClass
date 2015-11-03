@@ -22,7 +22,14 @@ pkColumnValue="EHR_SEQUENCE")*/
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class UIDBasedID extends ObjectID implements Serializable {
 
-    public abstract UID root();
+    public UIDBasedID() {
+    }
+
+    public UIDBasedID(String value) {
+        super(value);
+    }
+
+
     /*
     @Id 
     @GeneratedValue(strategy=GenerationType.TABLE,

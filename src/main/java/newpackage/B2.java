@@ -13,17 +13,19 @@ import javax.persistence.Entity;
  * @author Woshington
  */
 @Entity
-@DiscriminatorValue(value="B2")
-public class B2 extends B{
-    int idade;
+@DiscriminatorValue(value = "B2")
+public abstract  class B2 extends B{
 
-    public int getIdade() {
-        return idade;
+    public B2(String value) {
+        super(value);
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public B2() {
     }
-    
+
+    @Override
+    public String toString() {
+        return "B2{" + '}';
+    }
     
 }

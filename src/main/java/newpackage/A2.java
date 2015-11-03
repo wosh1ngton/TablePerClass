@@ -5,25 +5,33 @@
  */
 package newpackage;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@Table(name="A2")
-public class A2 extends A{
-    String sobrenome;
+@DiscriminatorValue(value = "A2")
+public class A2 extends A {
+    private String teste;
 
-    public String getSobrenome() {
-        return sobrenome;
+    public String getTeste() {
+        return teste;
     }
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
+    public void setTeste(String teste) {
+        this.teste = teste;
     }
     
+    
+    
+    public A2() {
+    }
+
+    public A2(String value) {
+        super(value);
+    }
     
 }

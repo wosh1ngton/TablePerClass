@@ -5,41 +5,78 @@
  */
 package newpackage;
 
-import java.io.Serializable;
 import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.Table;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author Woshington
  */
 @Entity
-@Table(name="C")
-@Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="C_TYPE",
-        discriminatorType=DiscriminatorType.STRING, length=2)
-public abstract class C implements Serializable {
-    @Id
-    String value; 
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "C_TYPE")
+public class C {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long ID;
+    private String namespace;
+    private String type;
+    @OneToOne
+    private B b;
+    
+
+    public C(String namespace, String type, B b) {
+        this.namespace = namespace;
+        this.type = type;
+        this.b = b;
+    }
+
+    public C(B b) {
+        this.b = b;
+    }
+
     public C() {
     }
-    public C(String value) {
-        this.value = value;
+
+    public String getNamespace() {
+        return namespace;
     }
 
-    public String getValue() {
-        return value;
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public String getType() {
+        return type;
     }
-    
-    
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public B getB() {
+        return b;
+    }
+
+    public void setB(B b) {
+        this.b = b;
+    }
+
+    public Long getID() {
+        return ID;
+    }
+
+    public void setID(Long ID) {
+        this.ID = ID;
+    }
+  
+  
+  
 }

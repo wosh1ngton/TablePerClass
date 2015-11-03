@@ -12,5 +12,13 @@ public class AccessGroupRef extends ObjectRef {
 
     public AccessGroupRef() {
     }
+
+    public AccessGroupRef(ObjectID objectId, String namespace, String type) {
+        super(objectId, namespace, type);
+    }
+
+    public AccessGroupRef(ObjectID objectId) {
+        super(objectId);
+    }
     
 }

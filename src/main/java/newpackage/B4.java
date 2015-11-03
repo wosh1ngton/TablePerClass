@@ -5,6 +5,7 @@
  */
 package newpackage;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
@@ -12,15 +13,21 @@ import javax.persistence.Entity;
  * @author Woshington
  */
 @Entity
-public class A12 extends A1{
-    String idade;
+@DiscriminatorValue(value = "B4")
+public class B4 extends B {
 
-    public String getIdade() {
-        return idade;
+    public B4(String value) {
+        super(value);
     }
 
-    public void setIdade(String idade) {
-        this.idade = idade;
+    public B4() {
     }
+
+    @Override
+    public String toString() {
+        return "B4{" + '}';
+    }
+    
+    
     
 }

@@ -1,7 +1,6 @@
 package com.mycompany.tablePerClass.Entidade;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  *
@@ -12,5 +11,9 @@ public class PartyRef extends ObjectRef {
 
     public PartyRef() {
     }
-    
+
+    public PartyRef(ObjectID objectId) {
+        super(objectId);
+    }
+   
 }

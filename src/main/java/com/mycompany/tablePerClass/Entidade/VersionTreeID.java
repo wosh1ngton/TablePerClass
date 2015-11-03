@@ -16,16 +16,12 @@ public class VersionTreeID {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String value;
-    private String trunkVersion;
-    private String branchNumber;
-    private String branchVersion;
 
-    public VersionTreeID(String value, String trunkVersion, String branchNumber, String branchVersion) {
+    public VersionTreeID(String value) {
         this.value = value;
-        this.trunkVersion = trunkVersion;
-        this.branchNumber = branchNumber;
-        this.branchVersion = branchVersion;
     }
+   
+    
 
     public String getValue() {
         return value;

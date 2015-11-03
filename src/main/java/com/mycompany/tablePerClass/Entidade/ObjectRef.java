@@ -1,7 +1,6 @@
 package com.mycompany.tablePerClass.Entidade;
 
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,23 +22,30 @@ valueColumnName="SEQUENCE_VALUE",
 pkColumnValue="EHR_SEQUENCE")
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public class ObjectRef implements Serializable {
+
+    public ObjectRef(ObjectID objectId, String namespace, String type) {
+        this.objectId = objectId;
+        this.namespace = namespace;
+        this.type = type;
+    }
+
+    public ObjectRef() {
+    }
+    public ObjectRef(ObjectID objectId) {
+        this.objectId = objectId;
+    }
+    
     
     @Id 
-    @GeneratedValue(strategy=GenerationType.TABLE,
-            generator = "EHR_TABLE_GENERATOR")
+    @GeneratedValue(strategy=GenerationType.TABLE, generator = "EHR_TABLE_GENERATOR")
     private Long id;
     
     @OneToOne
     private ObjectID objectId;
-    @Column
     private String namespace;
-    @Column
     private String type;
 
-    public ObjectRef() {
-    }
-    
-    
+     
 
     public Long getId() {
         return id;

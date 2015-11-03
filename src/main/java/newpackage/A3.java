@@ -5,12 +5,22 @@
  */
 package newpackage;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 /**
  *
  * @author Woshington
  */
-public class A21 extends A2{
-    public A21(String sobrenome) {
-        super.getSobrenome();
+@Entity
+@DiscriminatorValue(value = "A3")
+public class A3 extends A {
+
+    public A3() {
     }
+
+    public A3(String value) {
+        super(value);
+    }
+    
 }
